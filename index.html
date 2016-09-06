@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test JS</title>
+	<!-- bootstrap.min.css -->
+	<link rel="stylesheet" type="text/css" href="datas/bootstrap/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css">
+</head>
+
+<style type="text/css">
+	body {
+	  padding-top: 50px;
+	}
+	.starter-template {
+	  padding: 40px 15px;
+	  text-align: center;
+	}
+	.box{
+		height: 100px;
+		/*width: 500px;*/
+		border:1px solid indigo;
+		background: lightblue;
+	}
+	.btn-warning{
+		margin-left: 300px;
+	}
+	
+	.left{
+		float: left;
+	}
+	.right{
+		float: right;
+	}
+	.some{
+		padding: 20px;
+	}
+	/*.show{
+		display: block;
+	}
+	.hide{
+		display: none;
+	}*/
+	.slimscroll{
+	  margin:0 auto;
+	}
+	.slimscroll p{
+	  margin-right:30px;
+	  /*font-family:Verdana;*/
+	  font-size:0.85em;
+	  line-height:1.6;
+	  margin-bottom:2em;
+}
+
+</style>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="navbar navbar-default navbar-fixed-top">
+			    <div class="container">
+			        <div class="navbar-header">
+				        <button type="button" class="navbar-toggle collapsed" data-toggle	="collapse" data-target="#navbar" aria-expanded="false" 		aria-controls="navbar">
+				            <span class="sr-only">Toggle navigation</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				        </button>
+			          	<a class="navbar-brand" href="#" >Project name</a>
+			        </div>
+			        <div id="navbar" class="collapse navbar-collapse">
+			          <ul class="  nav navbar-nav pull-right">
+			            <li class="active"><a href="#"  >Home</a></li>
+			            <li><a href="#about">About</a></li>
+			            <li><a href="#" id="info">Services</a></li>
+			            <li><a href="#contact">Contact</a></li>
+			            <li><a href="#">Overview</a></li>
+			          </ul>
+			        </div><!--/.nav-collapse -->
+			    </div>
+    		</nav>
+    	</div>
+    	<div class="row">
+    			<div class="some">
+					<div class="col-md-6 ">
+						<div class="panel panel-success vempati">
+							<div class="panel-heading">
+								<h3 class="panel-title  "> <i class="glyphicon glyphicon-minus "></i>  Starting</h3>
+								<!-- <i class="glyphicon glyphicon-menu-hamburger pull-right"></i> -->
+							</div>
+							<div class="panel-body info1 slimscroll">
+								<p>Your placeholder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenesne igitur, inquam, Hieronymus Rhodius quid dicat esse summum bonum, ...Your placeholder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenesne igitur, inquam, Hieronymus Rhodius quid dicat esse summum bonum, ...
+								Your placeholder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenesne igitur, inquam, Hieronymus Rhodius quid dicat esse summum bonum, ...Your placeholder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenesne igitur, inquam, Hieronymus Rhodius quid dicat esse summum bonum, ...
+								Your placeholder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenesne igitur, inquam, Hieronymus Rhodius quid dicat esse summum bonum, ...Your placeholder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenesne igitur, inquam, Hieronymus Rhodius quid dicat esse summum bonum, ...
+								...Your placeholder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenesne igitur, inquam, Hieronymus Rhodius quid dicat esse summum bonum, ...
+								Your placeholder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenesne igitur, inquam, Hieronymus Rhodius quid dicat esse summum bonum, ...Your placeholder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenesne igitur, inquam, Hieronymus Rhodius quid dicat esse summum bonum, ...
+
+								</p>
+							</div>
+							<div class="panel-footer">
+								Ending
+							</div>
+						</div>
+					</div>
+				<!-- </div> -->
+    </div>	
+
+		</div>
+		<div class="row">
+			<div class=" col-md-8  col-md-push-2 col-md-pull-2 box left">
+				<a href="#some" class="btn btn-warning sravani" id="click"> click here</a>
+			</div>
+			
+			
+		
+	</div>		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src='http://rocha.la/misc/jsdemos/slimScroll/jquery.slimscroll.js'></script>
+	<script type="text/javascript" src ="datas/js/slimscroll.js"></script>
+	<script type="text/javascript">
+		var screenheight = $(window).height()/2.5;
+		
+
+		$(window).load(function () {
+			// body...
+			$('.box').css('margin-top',screenheight + 'px');
+		})
+		$('#click').click(function () {
+			// body...
+			$('.box').toggleClass('right');
+		})
+		var boxheight = $('.box').height()/3;
+		//alert(boxheight);
+		$(window).ready(function () {
+			// body...
+			$('.sravani').css('margin-top',boxheight + 'px');
+		})
+		$('.navbar-nav  li a').click(function () {
+			// alert('anchor clicked');
+			$('.navbar-nav').find('.active').removeClass('active');
+			$(this).parent().addClass('active');
+		})
+		$('.navbar-nav #info').click(function () {
+			//body...
+			//alert('showhidebutton is clicked');
+			$('.vempati').toggleClass('hide');
+		})
+		$(document).ready(function(){
+		  $(".slimscroll").slimscroll({
+		    // width:"245px",
+		    height:"200px",
+		    // distance:"100px",
+		    railVisible:true,
+		    wheelStep:10
+		  });
+		});
+		$(document).ready(function(){
+			$('.glyphicon-minus').click(function () {
+				$('.info1').toggleClass('hide');
+				$(".slimScrollDiv").toggleClass('hide'); 
+				$(this).toggleClass('fa fa-plus');
+			});
+		});	
+
+		// $('.glyphicon-minus').click(function () {
+		// 	// body...
+		// 	//alert('clicked');
+			
+		// })
+	</script>
+</body>
+</html>
